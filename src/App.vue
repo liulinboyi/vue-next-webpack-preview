@@ -1,22 +1,22 @@
 <template>
-  <img src="./logo.png">
+<div>
+    <img src="./logo.png">
   <h1>Hello Vue 3!</h1>
-  <button @click="inc">Clicked {{ count }} times.</button>
+  <Counter name="hello"></Counter>
+  <!-- <button @click="inc">Clicked {{ count }} times.</button> -->
+</div>
 </template>
 
 <script>
 import { ref } from 'vue'
+import Counter from './Counter.vue';
 
 export default {
+  components: {
+    Counter
+  },
   setup() {
-    const count = ref(0)
-    const inc = () => {
-      count.value++
-    }
-
     return {
-      count,
-      inc
     }
   }
 }
